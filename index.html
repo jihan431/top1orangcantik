@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sapa Pengguna</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+    <h1 id="greeting">Selamat Datang!</h1>
+
+    <label for="nama">Masukkan nama Anda:</label>
+    <input type="text" id="nama" placeholder="Nama Anda">
+    <button onclick="sapaPengguna()">enter</button>
+
+    <div id="sapa"></div>
+    <script id="script">
+        function getGreeting() {
+            let now = new Date();
+            let hour = now.getHours();
+            let greetingText = "";
+
+            if (hour >= 5 && hour < 12) {
+                greetingText = "Selamat Pagi 🌅";
+            } else if (hour >= 12 && hour < 15) {
+                greetingText = "Selamat Siang ☀️";
+            } else if (hour >= 15 && hour < 19) {
+                greetingText = "Selamat Sore 🌇";
+            } else {
+                greetingText = "Selamat Malam 🌙";
+            }
+
+
+            document.getElementById("greeting").textContent = greetingText;
+    }
+        function sapaPengguna() {
+            // Mengambil nilai dari input
+            var nama = document.getElementById("nama").value;
+            var sapaDiv = document.getElementById("sapa");
+
+            // Memeriksa apakah pengguna memasukkan nama
+            if (nama) {
+                // Menampilkan pesan sapaan
+                sapaDiv.innerHTML = "Haiiiiii " + nama  + " <a href='1/index.html'>klik ini ya</a>";
+            } else {
+                sapaDiv.innerHTML = "Anda tidak memasukkan nama.";
+            }
+        }
+    </script>
+</body>
+</html>
